@@ -1,4 +1,4 @@
-<div class="h-screen">
+<div class="h-screen relative">
   <header class="bg-sidebar-mobile bg-cover bg-no-repeat h-1/5">
     <div class="flex justify-center">
       <nav class="mt-8 flex gap-3">
@@ -8,10 +8,20 @@
       </nav>
     </div>
   </header>
-  <main class="bg-c-light-blue/30 h-4/5">
-    <section class="bg-white mx-4 py-8 px-6 rounded-lg">
+  <main class="bg-c-light-blue/30 h-4/5 flex flex-col justify-end items-end">
+    <section
+      class="bg-white mx-4 py-8 px-6 rounded-lg absolute top-28 shadow-lg shadow-c-marine-blue/5"
+    >
       <router-outlet></router-outlet>
     </section>
+    <div class="w-full bg-c-white py-6 px-4 flex justify-end">
+      <a
+        href="#"
+        class="text-c-white bg-c-marine-blue py-2 text-lg px-4 rounded"
+      >
+        Next Step
+      </a>
+    </div>
   </main>
 </div>
 
