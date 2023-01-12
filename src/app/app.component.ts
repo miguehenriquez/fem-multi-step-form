@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { map, Observable } from 'rxjs';
 import { NAV_LINKS } from './data/mock-data';
 import { LinkComponent } from './link/link.component';
 

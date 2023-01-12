@@ -1,11 +1,8 @@
-<div
-  class="rounded-full border px-3 py-1"
-  [ngClass]="navLink.isActive ? 'bg-c-light-blue' : ''"
->
+<div class="rounded-full border px-3 py-1" routerLinkActive="bg-c-light-blue">
   <a
     routerLink="{{ navLink.path }}"
-    [ngClass]="navLink.isActive ? 'text-c-marine-blue' : 'text-c-white'"
-    class="font-bold"
+    routerLinkActive="text-c-marine-blue"
+    class="font-bold text-c-white"
     >{{ navLink.index }}</a
   >
 </div>
