@@ -11,6 +11,5 @@ import { LinkComponent } from './link/link.component';
 })
 export class AppComponent {
   title = 'multi-step-form';
-
   navLinks = NAV_LINKS;
 }

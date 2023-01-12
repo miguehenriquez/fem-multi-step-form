@@ -7,10 +7,18 @@ import { SelectPlanComponent } from './select-plan/select-plan.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'personal-info', pathMatch: 'full' },
-  { path: 'personal-info', component: PersonalInfoComponent },
-  { path: 'select-plan', component: SelectPlanComponent },
-  { path: 'pick-addons', component: PickAddonsComponent },
-  { path: 'finishing-up', component: FinishingUpComponent },
+  {
+    path: 'personal-info',
+    title: 'personal-info',
+    component: PersonalInfoComponent,
+  },
+  { path: 'select-plan', title: 'select-plan', component: SelectPlanComponent },
+  { path: 'pick-addons', title: 'pick-addons', component: PickAddonsComponent },
+  {
+    path: 'finishing-up',
+    title: 'finishing-up',
+    component: FinishingUpComponent,
+  },
 ];
 
 @NgModule({
