@@ -1,6 +1,15 @@
-<div class="rounded-full border px-3 py-1" routerLinkActive="bg-c-light-blue">
+<div
+  class="rounded-full border px-3 py-1"
+  [ngClass]="{
+    'bg-c-light-blue': navLink.index === 4 && currStep === 'thank-you'
+  }"
+  routerLinkActive="bg-c-light-blue"
+>
   <a
     routerLink="{{ navLink.path }}"
+    [ngClass]="{
+      'text-c-marine-blue': navLink.index === 4 && currStep === 'thank-you'
+    }"
     routerLinkActive="text-c-marine-blue"
     class="font-bold text-c-white"
     >{{ navLink.index }}</a

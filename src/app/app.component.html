@@ -3,7 +3,11 @@
     <div class="flex justify-center">
       <nav class="mt-8 flex gap-3">
         <div *ngFor="let navLink of navLinks; index as i">
-          <app-link *ngIf="i < 4" [navLink]="navLink"></app-link>
+          <app-link
+            *ngIf="i < 4"
+            [navLink]="navLink"
+            [currStep]="currStep"
+          ></app-link>
         </div>
       </nav>
     </div>
@@ -21,7 +25,12 @@
       [ngClass]="prevStep != '' ? 'justify-between' : 'justify-end'"
       class="w-full bg-c-white py-6 px-4 flex"
     >
-      <a *ngIf="prevStep != ''" routerLink="{{ prevStep }}">Go Back</a>
+      <a
+        *ngIf="prevStep != ''"
+        routerLink="{{ prevStep }}"
+        class="font-bold text-c-cool-gray py-2"
+        >Go Back</a
+      >
       <a
         routerLink="{{ nextStep }}"
         class="text-c-white bg-c-marine-blue py-2 text-lg px-4 rounded"

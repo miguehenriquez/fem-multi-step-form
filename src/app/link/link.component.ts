@@ -7,4 +7,5 @@ import { NavLink } from '../data/NavLink';
 })
 export class LinkComponent {
   @Input() navLink!: NavLink;
+  @Input() currStep!: string;
 }
