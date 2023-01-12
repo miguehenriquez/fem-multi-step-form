@@ -2,8 +2,8 @@
   <header class="bg-sidebar-mobile bg-cover bg-no-repeat h-1/5">
     <div class="flex justify-center">
       <nav class="mt-8 flex gap-3">
-        <div *ngFor="let navLink of navLinks">
-          <app-link [navLink]="navLink"></app-link>
+        <div *ngFor="let navLink of navLinks; index as i">
+          <app-link *ngIf="i < 4" [navLink]="navLink"></app-link>
         </div>
       </nav>
     </div>
@@ -16,9 +16,14 @@
     >
       <router-outlet></router-outlet>
     </section>
-    <div class="w-full bg-c-white py-6 px-4 flex justify-end">
+    <div
+      *ngIf="currStep != 'thank-you'"
+      [ngClass]="prevStep != '' ? 'justify-between' : 'justify-end'"
+      class="w-full bg-c-white py-6 px-4 flex"
+    >
+      <a *ngIf="prevStep != ''" routerLink="{{ prevStep }}">Go Back</a>
       <a
-        href="#"
+        routerLink="{{ nextStep }}"
         class="text-c-white bg-c-marine-blue py-2 text-lg px-4 rounded"
       >
         Next Step

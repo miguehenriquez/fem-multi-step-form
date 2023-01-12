@@ -8,6 +8,7 @@ import { LinkComponent } from './link/link.component';
 import { SelectPlanComponent } from './select-plan/select-plan.component';
 import { PickAddonsComponent } from './pick-addons/pick-addons.component';
 import { FinishingUpComponent } from './finishing-up/finishing-up.component';
+import { ThankYouComponent } from './thank-you/thank-you.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FinishingUpComponent } from './finishing-up/finishing-up.component';
     LinkComponent,
     SelectPlanComponent,
     PickAddonsComponent,
-    FinishingUpComponent
+    FinishingUpComponent,
+    ThankYouComponent
   ],
   imports: [
     BrowserModule,
