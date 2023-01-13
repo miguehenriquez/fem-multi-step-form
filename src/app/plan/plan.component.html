@@ -8,14 +8,14 @@
     <h4 class="text-c-marine-blue font-medium text-lg leading-5">
       {{ plan.name }}
     </h4>
-    <p *ngIf="planType === 0" class="text-c-cool-gray text-sm">
+    <p *ngIf="planOption === 'monthly'" class="text-c-cool-gray text-sm">
       {{ plan.priceMonthDesc }}
     </p>
-    <p *ngIf="planType === 1" class="text-c-cool-gray text-sm">
+    <p *ngIf="planOption === 'yearly'" class="text-c-cool-gray text-sm">
       {{ plan.priceYearDesc }}
     </p>
     <p
-      [ngClass]="{ invisible: planType === 0 }"
+      [ngClass]="{ invisible: planOption === 'monthly' }"
       class="text-c-marine-blue text-sm"
     >
       {{ plan.monthsFree }}

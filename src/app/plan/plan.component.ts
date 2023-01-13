@@ -10,7 +10,7 @@ import { PlansService } from '../services/plans.service';
 })
 export class PlanComponent {
   @Input() plan!: Plan;
-  @Input() planType!: PlanOption;
+  @Input() planOption!: PlanOption;
 
   constructor(private planService: PlansService) {}
 

@@ -10,15 +10,15 @@ import { PlansService } from '../services/plans.service';
 })
 export class SelectPlanComponent {
   plans: Plan[];
-  planType: PlanOption = PlanOption.Yearly;
+  planOption: PlanOption = PlanOption.Yearly;
 
   constructor(private planService: PlansService) {
     this.plans = this.planService.getPlans();
   }
 
   togglePlanType() {
-    this.planType =
-      this.planType === PlanOption.Monthly
+    this.planOption =
+      this.planOption === PlanOption.Monthly
         ? PlanOption.Yearly
         : PlanOption.Monthly;
   }

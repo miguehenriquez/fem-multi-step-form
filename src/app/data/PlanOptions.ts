@@ -1,4 +1,4 @@
 export enum PlanOption {
-  Monthly,
-  Yearly,
+  Monthly = 'monthly',
+  Yearly = 'yearly',
 }
