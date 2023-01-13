@@ -24,8 +24,36 @@ export class SubscriptionService {
     this.personalInfo.phone = phone;
   }
 
+  private setTotalDue() {
+    this.totalDue = this.getPlanTotal() + this.getAddonsTotal();
+  }
+
+  getTotalDueDesc() {
+    const suffix = this.planOption === 'monthly' ? '/mo' : '/yr';
+    return `+$${this.totalDue}${suffix}`;
+  }
+
+  getPlanTotal(): number {
+    if (!this.plan) {
+      return 0;
+    }
+    return this.planOption === 'monthly'
+      ? this.plan.priceMonth
+      : this.plan.priceYear;
+  }
+
+  getAddonsTotal(): number {
+    if (!this.addOns) {
+      return 0;
+    }
+    return this.planOption === 'monthly'
+      ? this.addOns.reduce((acc, curr) => acc + curr.priceMonth, 0)
+      : this.addOns.reduce((acc, curr) => acc + curr.priceYear, 0);
+  }
+
   setPlan(plan: Plan) {
     this.plan = plan;
+    this.setTotalDue();
   }
 
   getPlan() {
@@ -34,6 +62,7 @@ export class SubscriptionService {
 
   setPlanOption(planOption: PlanOption) {
     this.planOption = planOption;
+    this.setTotalDue();
   }
 
   getPlanOption() {
@@ -42,6 +71,7 @@ export class SubscriptionService {
 
   setAddons(addons: AddOn[]) {
     this.addOns = addons;
+    this.setTotalDue();
   }
 
   getAddons() {

@@ -32,7 +32,9 @@
     </div>
   </section>
   <div class="flex justify-between p-4">
-    <p class="text-c-cool-gray">Total (per month)</p>
-    <p class="text-c-purplish-blue font-bold">+$12/mo</p>
+    <p class="text-c-cool-gray">
+      Total ({{ planOption === "monthly" ? "per month" : "per year" }})
+    </p>
+    <p class="text-c-purplish-blue font-bold">{{ totalDueDesc }}</p>
   </div>
 </section>
