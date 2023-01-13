@@ -9,6 +9,7 @@ import { SelectPlanComponent } from './select-plan/select-plan.component';
 import { PickAddonsComponent } from './pick-addons/pick-addons.component';
 import { FinishingUpComponent } from './finishing-up/finishing-up.component';
 import { ThankYouComponent } from './thank-you/thank-you.component';
+import { PlanComponent } from './plan/plan.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ThankYouComponent } from './thank-you/thank-you.component';
     SelectPlanComponent,
     PickAddonsComponent,
     FinishingUpComponent,
-    ThankYouComponent
+    ThankYouComponent,
+    PlanComponent
   ],
   imports: [
     BrowserModule,

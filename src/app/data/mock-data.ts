@@ -17,7 +17,7 @@ export const PLANS: Plan[] = [
     priceYear: '$90/yr',
     imgPath: 'assets/images/icon-arcade.svg',
     monthsFree: '2 months free',
-    isSelected: false,
+    isSelected: true,
   },
   {
     name: 'Advanced',

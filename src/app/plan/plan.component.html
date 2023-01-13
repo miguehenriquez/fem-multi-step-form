@@ -1,0 +1,24 @@
+<div
+  [ngClass]="{ ' border-c-marine-blue bg-c-marine-blue/5': plan.isSelected }"
+  (click)="togleIsSelected()"
+  class="border rounded-lg border-c-cool-gray/40 flex gap-3 px-4 py-2"
+>
+  <img src="{{ plan.imgPath }}" alt="arcade plan" />
+  <div>
+    <h4 class="text-c-marine-blue font-medium text-lg leading-5">
+      {{ plan.name }}
+    </h4>
+    <p *ngIf="planType === 0" class="text-c-cool-gray text-sm">
+      {{ plan.priceMonth }}
+    </p>
+    <p *ngIf="planType === 1" class="text-c-cool-gray text-sm">
+      {{ plan.priceYear }}
+    </p>
+    <p
+      [ngClass]="{ invisible: planType === 0 }"
+      class="text-c-marine-blue text-sm"
+    >
+      {{ plan.monthsFree }}
+    </p>
+  </div>
+</div>
