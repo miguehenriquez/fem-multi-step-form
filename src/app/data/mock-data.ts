@@ -1,3 +1,4 @@
+import { AddOn } from './AddOn';
 import { NavLink } from './NavLink';
 import { Plan } from './Plan';
 import { PlanOption } from './PlanOptions';
@@ -13,26 +14,61 @@ export const NAV_LINKS: NavLink[] = [
 export const PLANS: Plan[] = [
   {
     name: 'Arcade',
-    priceMonth: '$9/mo',
-    priceYear: '$90/yr',
+    priceMonthDesc: '$9/mo',
+    priceMonth: 9,
+    priceYearDesc: '$90/yr',
+    priceYear: 90,
     imgPath: 'assets/images/icon-arcade.svg',
     monthsFree: '2 months free',
     isSelected: false,
   },
   {
     name: 'Advanced',
-    priceMonth: '$12/mo',
-    priceYear: '$120/yr',
+    priceMonthDesc: '$12/mo',
+    priceMonth: 12,
+    priceYearDesc: '$120/yr',
+    priceYear: 120,
     imgPath: 'assets/images/icon-advanced.svg',
     monthsFree: '2 months free',
     isSelected: false,
   },
   {
     name: 'Pro',
-    priceMonth: '$15/mo',
-    priceYear: '$150/yr',
+    priceMonthDesc: '$15/mo',
+    priceMonth: 15,
+    priceYearDesc: '$150/yr',
+    priceYear: 150,
     imgPath: 'assets/images/icon-pro.svg',
     monthsFree: '2 months free',
+    isSelected: false,
+  },
+];
+export const ADD_ONS: AddOn[] = [
+  {
+    name: 'Online service',
+    priceMonthDesc: '+$1/mo',
+    priceMonth: 1,
+    priceYearDesc: '+$10/yr',
+    priceYear: 10,
+    description: 'Access to multiplayer games',
+    isSelected: false,
+  },
+  {
+    name: 'Larger storage',
+    priceMonthDesc: '+$2/mo',
+    priceMonth: 2,
+    priceYearDesc: '+$20/yr',
+    priceYear: 20,
+    description: 'Extra 1TB of cloud save',
+    isSelected: false,
+  },
+  {
+    name: 'Customizable profile',
+    priceMonthDesc: '+$2/mo',
+    priceMonth: 2,
+    priceYearDesc: '+$20/yr',
+    priceYear: 20,
+    description: 'Custom theme on your profile',
     isSelected: false,
   },
 ];

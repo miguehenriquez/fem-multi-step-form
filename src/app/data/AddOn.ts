@@ -1,10 +1,9 @@
-export interface Plan {
+export interface AddOn {
   name: string;
   priceMonthDesc: string;
   priceMonth: number;
   priceYearDesc: string;
   priceYear: number;
-  imgPath: string;
-  monthsFree: string;
+  description: string;
   isSelected: boolean;
 }

@@ -9,10 +9,10 @@
       {{ plan.name }}
     </h4>
     <p *ngIf="planType === 0" class="text-c-cool-gray text-sm">
-      {{ plan.priceMonth }}
+      {{ plan.priceMonthDesc }}
     </p>
     <p *ngIf="planType === 1" class="text-c-cool-gray text-sm">
-      {{ plan.priceYear }}
+      {{ plan.priceYearDesc }}
     </p>
     <p
       [ngClass]="{ invisible: planType === 0 }"
