@@ -3,4 +3,29 @@
   <p class="text-base text-c-cool-gray">
     Double-check everything looks OK before confirming.
   </p>
+  <section class="bg-c-alabaster px-4 py-5 rounded-lg">
+    <!-- <h4>
+      {{ plan.name }} <span>({{ planOption | titlecase }})</span>
+    </h4> -->
+    <div class="flex justify-between items-center">
+      <div>
+        <h4 class="text-c-marine-blue font-medium text-sm">Arcade (Monthly)</h4>
+        <a
+          class="text-c-cool-gray border-b-2 border-c-cool-gray text-sm"
+          routerLink="/select-plan"
+          >Change</a
+        >
+      </div>
+      <p class="text-c-marine-blue font-bold text-sm">$9/mo</p>
+    </div>
+    <hr class="my-3" />
+    <div class="flex justify-between">
+      <p class="text-c-cool-gray text-sm">Online Service</p>
+      <p class="text-c-marine-blue text-sm">+2/mo</p>
+    </div>
+  </section>
+  <div class="flex justify-between p-4">
+    <p class="text-c-cool-gray">Total (per month)</p>
+    <p class="text-c-purplish-blue font-bold">+$12/mo</p>
+  </div>
 </section>

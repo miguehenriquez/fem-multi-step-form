@@ -14,6 +14,7 @@ export class SubscriptionService {
   private plan!: Plan;
   private addOns!: AddOn[];
   private planOption!: PlanOption;
+  private totalDue!: number;
 
   constructor(planService: PlansService, addonService: AddonService) {}
 
