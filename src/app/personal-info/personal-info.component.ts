@@ -4,4 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-personal-info',
   templateUrl: './personal-info.component.html',
 })
-export class PersonalInfoComponent {}
+export class PersonalInfoComponent {
+  name: string = '';
+  email: string = '';
+  phone: string = '';
+}

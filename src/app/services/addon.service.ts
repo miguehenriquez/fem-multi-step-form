@@ -13,14 +13,16 @@ export class AddonService {
     return this.addOns;
   }
 
-  toggleSelection(name: string) {
+  toggleSelection(name: string): AddOn[] {
     const index = this.addOns.findIndex((addOn) => name === addOn.name);
     if (index >= 0) {
       this.addOns[index].isSelected = !this.addOns[index].isSelected;
     }
+
+    return this.getSelectedAddOns();
   }
 
-  getSelectedAddOns() {
+  getSelectedAddOns(): AddOn[] {
     return this.addOns.filter((addOn) => addOn.isSelected);
   }
 }

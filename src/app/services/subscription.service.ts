@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AddOn } from '../data/AddOn';
 import { PersonalInfo } from '../data/PersonalInfo';
 import { Plan } from '../data/Plan';
+import { PlanOption } from '../data/PlanOptions';
 import { AddonService } from './addon.service';
 import { PlansService } from './plans.service';
 
@@ -12,6 +13,8 @@ export class SubscriptionService {
   private personalInfo!: PersonalInfo;
   private plan!: Plan;
   private addOns!: AddOn[];
+  private planOption!: PlanOption;
+
   constructor(planService: PlansService, addonService: AddonService) {}
 
   setPersonalInfo(name: string, email: string, phone: string) {
@@ -28,9 +31,13 @@ export class SubscriptionService {
     return this.plan;
   }
 
-  setPlanOption() {}
+  setPlanOption(planOption: PlanOption) {
+    this.planOption = planOption;
+  }
 
-  getPlanOptions() {}
+  getPlanOption() {
+    return this.planOption;
+  }
 
   setAddons(addons: AddOn[]) {
     this.addOns = addons;

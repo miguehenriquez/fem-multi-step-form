@@ -20,6 +20,6 @@
     </p>
   </div>
   <p class="text-c-purplish-blue text-sm">
-    {{ addOn.priceMonthDesc }}
+    {{ planOption == "monthly" ? addOn.priceMonthDesc : addOn.priceYearDesc }}
   </p>
 </div>
