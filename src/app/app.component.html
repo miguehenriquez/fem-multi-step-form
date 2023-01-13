@@ -33,10 +33,14 @@
         >Go Back</a
       >
       <a
+        [ngClass]="{
+          'bg-c-marine-blue': nextStep != 'thank-you',
+          'bg-c-purplish-blue': nextStep === 'thank-you'
+        }"
         routerLink="{{ nextStep }}"
-        class="text-c-white bg-c-marine-blue py-2 text-lg px-4 rounded"
+        class="text-c-white py-2 text-lg px-4 rounded"
       >
-        Next Step
+        {{ nextStep === "thank-you" ? "Confirm" : "Next Step" }}
       </a>
     </div>
   </main>
