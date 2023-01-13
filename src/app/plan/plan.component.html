@@ -1,6 +1,6 @@
 <div
-  [ngClass]="{ ' border-c-marine-blue bg-c-marine-blue/5': plan.isSelected }"
-  (click)="togleIsSelected()"
+  [ngClass]="{ ' border-c-marine-blue/95 bg-c-marine-blue/5': plan.isSelected }"
+  (click)="setSelected()"
   class="border rounded-lg border-c-cool-gray/40 flex gap-3 px-4 py-2"
 >
   <img src="{{ plan.imgPath }}" alt="arcade plan" />
