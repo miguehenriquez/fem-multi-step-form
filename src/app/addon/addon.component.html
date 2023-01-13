@@ -1,0 +1,25 @@
+<div
+  (click)="toggleAddon()"
+  [ngClass]="{
+    ' border-c-purplish-blue/95 bg-c-purplish-blue/5': addOn.isSelected
+  }"
+  class="border rounded-lg border-c-cool-gray/40 flex gap-3 items-center justify-between px-4 py-2"
+>
+  <div
+    [ngClass]="{ 'bg-c-purplish-blue': addOn.isSelected }"
+    class="border px-1 py-[6px] rounded"
+  >
+    <img src="assets/images/icon-checkmark.svg" alt="" />
+  </div>
+  <div>
+    <h4 class="text-c-marine-blue font-medium">
+      {{ addOn.name }}
+    </h4>
+    <p class="text-c-cool-gray text-xs">
+      {{ addOn.description }}
+    </p>
+  </div>
+  <p class="text-c-purplish-blue text-sm">
+    {{ addOn.priceMonthDesc }}
+  </p>
+</div>
