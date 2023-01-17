@@ -1,17 +1,23 @@
-<div
-  class="rounded-full border px-3 py-1"
-  [ngClass]="{
-    'bg-c-light-blue': navLink.index === 4 && currStep === 'thank-you'
-  }"
-  routerLinkActive="bg-c-light-blue"
->
-  <a
-    routerLink="{{ navLink.path }}"
+<div class="lg:grid lg:grid-cols-4 lg:gap-4 items-center">
+  <div
+    class="rounded-full lg:col-span-1 lg:flex lg:grow-0 lg:h-min lg:items-center border px-3 py-1"
     [ngClass]="{
-      'text-c-marine-blue': navLink.index === 4 && currStep === 'thank-you'
+      'bg-c-light-blue': navLink.index === 4 && currStep === 'thank-you'
     }"
-    routerLinkActive="text-c-marine-blue"
-    class="font-bold text-c-white"
-    >{{ navLink.index }}</a
+    routerLinkActive="bg-c-light-blue"
   >
+    <a
+      routerLink="{{ navLink.path }}"
+      [ngClass]="{
+        'text-c-marine-blue': navLink.index === 4 && currStep === 'thank-you'
+      }"
+      routerLinkActive="text-c-marine-blue"
+      class="font-bold text-c-white"
+      >{{ navLink.index }}</a
+    >
+  </div>
+  <div class="hidden lg:block lg:col-span-3 text-c-white">
+    <p class="text-sm font-light text-c-light-blue">STEP {{ navLink.index }}</p>
+    <h4 class="font-bold uppercase">{{ navLink.label }}</h4>
+  </div>
 </div>

@@ -4,10 +4,10 @@ import { Plan } from './Plan';
 import { PlanOption } from './PlanOptions';
 
 export const NAV_LINKS: NavLink[] = [
-  { index: 1, path: 'personal-info' },
-  { index: 2, path: 'select-plan' },
-  { index: 3, path: 'pick-addons' },
-  { index: 4, path: 'finishing-up' },
+  { index: 1, path: 'personal-info', label: 'Your Info' },
+  { index: 2, path: 'select-plan', label: 'Select Plan' },
+  { index: 3, path: 'pick-addons', label: 'Add-ons' },
+  { index: 4, path: 'finishing-up', label: 'summary' },
   { index: 5, path: 'thank-you' },
 ];
 
