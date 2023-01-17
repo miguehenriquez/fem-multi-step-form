@@ -11,6 +11,7 @@ import { FinishingUpComponent } from './finishing-up/finishing-up.component';
 import { ThankYouComponent } from './thank-you/thank-you.component';
 import { PlanComponent } from './plan/plan.component';
 import { AddonComponent } from './addon/addon.component';
+import { MainContentComponent } from './main-content/main-content.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AddonComponent } from './addon/addon.component';
     FinishingUpComponent,
     ThankYouComponent,
     PlanComponent,
-    AddonComponent
+    AddonComponent,
+    MainContentComponent
   ],
   imports: [
     BrowserModule,

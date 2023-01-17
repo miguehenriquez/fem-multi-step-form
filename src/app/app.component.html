@@ -4,7 +4,7 @@
       class="lg:h-full lg:w-80 lg:col-span-4 xl:col-span-3 lg:bg-sidebar-desktop lg:rounded-2xl bg-sidebar-mobile bg-cover bg-no-repeat h-1/5"
     >
       <div class="lg:mt-[10%] lg:justify-start lg:pl-[10%] flex justify-center">
-        <nav class="lg:flex-col lg:gap-9 mt-[7%] flex gap-3">
+        <nav class="lg:flex-col lg:gap-9 mt-[6%] flex gap-3">
           <div *ngFor="let navLink of navLinks; index as i">
             <app-link
               *ngIf="i < 4"
@@ -27,12 +27,12 @@
       <div
         *ngIf="currStep != 'thank-you'"
         [ngClass]="prevStep != '' ? 'justify-between' : 'justify-end'"
-        class="w-full bg-c-white py-4 px-4 flex"
+        class="lg:p-[9%] lg:mx-3 w-full bg-c-white py-4 flex"
       >
         <a
           *ngIf="prevStep != ''"
           routerLink="{{ prevStep }}"
-          class="font-bold text-c-cool-gray py-2"
+          class="font-bold text-c-cool-gray py-2 mx-4"
           >Go Back</a
         >
         <a
@@ -41,7 +41,7 @@
             'bg-c-purplish-blue': nextStep === 'thank-you'
           }"
           routerLink="{{ nextStep }}"
-          class="text-c-white py-2 text-lg px-4 rounded"
+          class="lg:font-bold lg:rounded-lg lg:py-3 lg:px-5 text-c-white py-2 text-lg px-4 rounded mx-4"
         >
           {{ nextStep === "thank-you" ? "Confirm" : "Next Step" }}
         </a>
