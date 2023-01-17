@@ -1,10 +1,14 @@
 <div
   [ngClass]="{ ' border-c-marine-blue/95 bg-c-marine-blue/5': plan.isSelected }"
   (click)="setSelected()"
-  class="border rounded-lg border-c-cool-gray/40 flex gap-3 px-4 py-2"
+  class="lg:flex-col lg:gap-10 border rounded-lg border-c-cool-gray/40 flex gap-3 px-4 py-2"
 >
-  <img src="{{ plan.imgPath }}" alt="arcade plan" />
-  <div>
+  <img
+    class="lg:w-10 lg:h-10 lg:mt-4"
+    src="{{ plan.imgPath }}"
+    alt="{{ plan.name }}"
+  />
+  <div class="lg:flex lg:flex-col lg:justify-end">
     <h4 class="text-c-marine-blue font-medium text-lg leading-5">
       {{ plan.name }}
     </h4>
