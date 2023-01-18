@@ -2,38 +2,57 @@
   [title]="'Finishing up'"
   [description]="'Double-check everything looks OK before confirming.'"
 >
-  <section class="bg-c-alabaster px-4 py-5 rounded-lg">
-    <div class="flex justify-between items-center">
-      <div>
-        <h4 class="lg:text-lg text-c-marine-blue font-medium text-sm">
-          {{ plan.name }} ({{ planOption | titlecase }})
-        </h4>
-        <a
-          class="lg:text-base text-c-cool-gray border-b-2 border-c-cool-gray text-sm"
-          routerLink="/select-plan"
-          >Change</a
-        >
+  <div *ngIf="plan; else PlanMissing">
+    <section
+      *ngIf="plan; else PlanMissing"
+      class="bg-c-alabaster px-4 py-5 rounded-lg"
+    >
+      <div class="flex justify-between items-center">
+        <div>
+          <h4 class="lg:text-lg text-c-marine-blue font-medium text-sm">
+            {{ plan.name }} ({{ planOption | titlecase }})
+          </h4>
+          <a
+            class="lg:text-base text-c-cool-gray border-b-2 border-c-cool-gray text-sm"
+            routerLink="/select-plan"
+            >Change</a
+          >
+        </div>
+        <p class="lg:text-base text-c-marine-blue font-bold text-sm">
+          {{
+            planOption === "monthly" ? plan.priceMonthDesc : plan.priceYearDesc
+          }}
+        </p>
       </div>
-      <p class="lg:text-base text-c-marine-blue font-bold text-sm">
-        {{
-          planOption === "monthly" ? plan.priceMonthDesc : plan.priceYearDesc
-        }}
+      <hr class="my-3" />
+      <div *ngFor="let addon of addons" class="flex justify-between mt-3">
+        <p class="text-c-cool-gray text-sm">{{ addon.name }}</p>
+        <p class="lg:text-base text-c-marine-blue text-sm">
+          {{
+            planOption === "monthly"
+              ? addon.priceMonthDesc
+              : addon.priceYearDesc
+          }}
+        </p>
+      </div>
+    </section>
+    <div class="flex justify-between p-4">
+      <p class="text-c-cool-gray">
+        Total ({{ planOption === "monthly" ? "per month" : "per year" }})
       </p>
+      <p class="text-c-purplish-blue font-bold">{{ totalDueDesc }}</p>
     </div>
-    <hr class="my-3" />
-    <div *ngFor="let addon of addons" class="flex justify-between mt-3">
-      <p class="text-c-cool-gray text-sm">{{ addon.name }}</p>
-      <p class="lg:text-base text-c-marine-blue text-sm">
-        {{
-          planOption === "monthly" ? addon.priceMonthDesc : addon.priceYearDesc
-        }}
-      </p>
-    </div>
-  </section>
-  <div class="flex justify-between p-4">
-    <p class="text-c-cool-gray">
-      Total ({{ planOption === "monthly" ? "per month" : "per year" }})
-    </p>
-    <p class="text-c-purplish-blue font-bold">{{ totalDueDesc }}</p>
   </div>
+
+  <ng-template #PlanMissing>
+    <div class="flex justify-center p-3 my-6 text-c-strawberry-red rounded-lg">
+      <h3 class="text-lg">
+        Looks like you are missing a plan, please
+        <a class="underline text-c-purplish-blue" routerLink="/select-plan"
+          >Select a plan</a
+        >
+        to continue
+      </h3>
+    </div>
+  </ng-template>
 </app-main-content>

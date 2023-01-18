@@ -9,6 +9,7 @@ import {
 import { filter, map, Observable } from 'rxjs';
 import { NAV_LINKS } from './data/mock-data';
 import { LinkComponent } from './link/link.component';
+import { SubscriptionService } from './services/subscription.service';
 
 @Component({
   selector: 'app-root',
@@ -20,8 +21,8 @@ export class AppComponent {
   nextStep: string = '';
   currStep: string = '';
   prevStep: string = '';
-  constructor(private router: Router) {
-    // console.log(router.url);
+  hasPlan: boolean = false;
+  constructor(private router: Router, private subService: SubscriptionService) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         this.currStep = event.url.slice(1);
@@ -34,11 +35,16 @@ export class AppComponent {
     const currIndex = this.navLinks.findIndex(
       (navLink) => navLink.path === currStep
     );
-    // console.log(currIndex);
     this.nextStep =
       currIndex < 4
         ? this.navLinks[currIndex + 1].path
         : this.navLinks[currIndex].path;
+
     this.prevStep = currIndex > 0 ? this.navLinks[currIndex - 1].path : '';
+
+    if (this.nextStep === 'thank-you') {
+      this.hasPlan = this.subService.getPlan() != undefined ? true : false;
+      console.log(this.hasPlan);
+    }
   }
 }

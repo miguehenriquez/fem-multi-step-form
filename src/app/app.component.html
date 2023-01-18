@@ -38,7 +38,8 @@
         <a
           [ngClass]="{
             'bg-c-marine-blue': nextStep != 'thank-you',
-            'bg-c-purplish-blue': nextStep === 'thank-you'
+            'bg-c-purplish-blue': nextStep === 'thank-you',
+            hidden: !hasPlan && nextStep === 'thank-you'
           }"
           routerLink="{{ nextStep }}"
           class="lg:font-bold lg:rounded-lg lg:py-3 lg:px-5 text-c-white py-2 text-lg px-4 rounded mx-4"
